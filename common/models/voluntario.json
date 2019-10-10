@@ -1,0 +1,41 @@
+{
+  "name": "Voluntario",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "dni": {
+      "type": "string",
+      "required": true
+    },
+    "puntaje": {
+      "type": "number",
+      "required": true
+    },
+    "nro_telefono_celular": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "direccion": {
+      "type": "string",
+      "required": true
+    },
+    "direccion_coordenadas": {
+      "type": "geopoint"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Bulto",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "descripcion": {
+      "type": "string"
+    },
+    "volumen": {
+      "type": [
+        "number"
+      ]
+    },
+    "fecha_disponibilidad": {
+      "type": "date",
+      "required": true
+    },
+    "revisado": {
+      "type": "boolean",
+      "required": true
+    },
+    "fecha_vencimiento": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

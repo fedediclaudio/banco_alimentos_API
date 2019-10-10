@@ -1,0 +1,36 @@
+{
+  "name": "Vehiculo",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "marca": {
+      "type": "string",
+      "required": true
+    },
+    "modelo": {
+      "type": "string",
+      "required": true
+    },
+    "patente": {
+      "type": "string",
+      "required": true
+    },
+    "volumen": {
+      "type": [
+        "number"
+      ],
+      "required": true
+    },
+    "distancia_maxima": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

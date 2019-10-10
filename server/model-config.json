@@ -1,0 +1,76 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "OrganizacionBeneficiaria": {
+    "dataSource": "Banco_Alimentos_BD",
+    "public": true
+  },
+  "Voluntario": {
+    "dataSource": "Banco_Alimentos_BD",
+    "public": true
+  },
+  "Vehiculo": {
+    "dataSource": "Banco_Alimentos_BD",
+    "public": true
+  },
+  "OrganizacionDonante": {
+    "dataSource": "Banco_Alimentos_BD",
+    "public": true
+  },
+  "PersonaDeContacto": {
+    "dataSource": "Banco_Alimentos_BD",
+    "public": true
+  },
+  "TipoDeAlimento": {
+    "dataSource": "Banco_Alimentos_BD",
+    "public": true
+  },
+  "Estado": {
+    "dataSource": "Banco_Alimentos_BD",
+    "public": true
+  },
+  "Insignias": {
+    "dataSource": "Banco_Alimentos_BD",
+    "public": true
+  },
+  "CategoriaVoluntario": {
+    "dataSource": "Banco_Alimentos_BD",
+    "public": true
+  },
+  "Producto": {
+    "dataSource": "Banco_Alimentos_BD",
+    "public": true
+  },
+  "Paquete": {
+    "dataSource": "Banco_Alimentos_BD",
+    "public": true
+  },
+  "Bulto": {
+    "dataSource": "Banco_Alimentos_BD",
+    "public": true
+  },
+  "BultoProductoPaquete": {
+    "dataSource": "Banco_Alimentos_BD",
+    "public": true
+  },
+  "Envio": {
+    "dataSource": "Banco_Alimentos_BD",
+    "public": true
+  },
+  "InsigniaOtorgada": {
+    "dataSource": "Banco_Alimentos_BD",
+    "public": true
+  }
+}

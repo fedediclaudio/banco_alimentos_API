@@ -1,0 +1,13 @@
+{
+  "Banco_Alimentos_BD": {
+    "host": "",
+    "port": 0,
+    "url": "",
+    "database": "Banco_Alimentos_BD",
+    "password": "",
+    "name": "Banco_Alimentos_BD",
+    "user": "",
+    "useNewUrlParser": true,
+    "connector": "mongodb"
+  }
+}

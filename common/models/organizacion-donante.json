@@ -1,0 +1,33 @@
+{
+  "name": "OrganizacionDonante",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "razon_social": {
+      "type": "string",
+      "required": true
+    },
+    "cuil": {
+      "type": "string",
+      "required": true
+    },
+    "direccion": {
+      "type": "string",
+      "required": true
+    },
+    "direccion_coordenadas": {
+      "type": "geopoint"
+    },
+    "puntaje": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
