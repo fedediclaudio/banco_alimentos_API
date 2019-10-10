@@ -15,7 +15,16 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "paquetes": {
+      "type": "hasMany",
+      "model": "Paquete",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }

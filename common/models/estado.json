@@ -12,7 +12,24 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "envios": {
+      "type": "hasMany",
+      "model": "Envio",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "bultos": {
+      "type": "hasMany",
+      "model": "Bulto",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }

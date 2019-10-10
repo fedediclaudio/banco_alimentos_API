@@ -35,7 +35,48 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "categoriaVoluntarios": {
+      "type": "hasOne",
+      "model": "CategoriaVoluntario",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "vehiculos": {
+      "type": "hasOne",
+      "model": "Vehiculo",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "envios": {
+      "type": "hasMany",
+      "model": "Envio",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "insigniaOtorgadas": {
+      "type": "hasMany",
+      "model": "InsigniaOtorgadaVoluntario",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "bultos": {
+      "type": "hasMany",
+      "model": "Bulto",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }

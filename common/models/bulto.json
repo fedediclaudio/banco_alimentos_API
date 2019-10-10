@@ -28,7 +28,40 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "estados": {
+      "type": "hasOne",
+      "model": "Estado",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "voluntarios": {
+      "type": "hasOne",
+      "model": "Voluntario",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "organizacionDonantes": {
+      "type": "hasOne",
+      "model": "OrganizacionDonante",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "bultoProductoPaquetes": {
+      "type": "hasMany",
+      "model": "BultoProductoPaquete",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }

@@ -1,5 +1,5 @@
 {
-  "name": "Insignias",
+  "name": "Insignia",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -16,7 +16,24 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "insigniaOtorgadaVoluntarios": {
+      "type": "hasMany",
+      "model": "InsigniaOtorgadaVoluntario",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "insigniaOtorgadaOrgDonantes": {
+      "type": "hasMany",
+      "model": "InsigniaOtorgadaOrgDonante",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }

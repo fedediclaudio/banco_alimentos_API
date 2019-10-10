@@ -35,7 +35,40 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "voluntarios": {
+      "type": "hasOne",
+      "model": "Voluntario",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "estados": {
+      "type": "hasOne",
+      "model": "Estado",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "paquetes": {
+      "type": "hasMany",
+      "model": "Paquete",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "organizacionBeneficiaria": {
+      "type": "hasOne",
+      "model": "OrganizacionBeneficiaria",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }

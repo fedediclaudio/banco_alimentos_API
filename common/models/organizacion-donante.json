@@ -27,7 +27,32 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "insigniaOtorgadaOrgDonantes": {
+      "type": "hasMany",
+      "model": "InsigniaOtorgadaOrgDonante",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "bultos": {
+      "type": "hasMany",
+      "model": "Bulto",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "contactos": {
+      "type": "hasMany",
+      "model": "Contacto",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }

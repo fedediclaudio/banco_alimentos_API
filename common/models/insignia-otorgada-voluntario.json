@@ -1,21 +1,32 @@
 {
-  "name": "CategoriaVoluntario",
+  "name": "InsigniaOtorgadaVoluntario",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "nombre": {
-      "type": "string",
+    "fecha_se_otorgo": {
+      "type": "date",
       "required": true
+    },
+    "fecha_perdio": {
+      "type": "date"
     }
   },
   "validations": [],
   "relations": {
     "voluntarios": {
-      "type": "hasMany",
+      "type": "hasOne",
       "model": "Voluntario",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "insignia": {
+      "type": "hasOne",
+      "model": "Insignia",
       "foreignKey": "",
       "options": {
         "nestRemoting": true

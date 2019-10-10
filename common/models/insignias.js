@@ -1,5 +1,5 @@
 'use strict';
 
-module.exports = function(Insignias) {
+module.exports = function(Insignia) {
 
 };

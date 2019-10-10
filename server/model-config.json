@@ -41,7 +41,7 @@
     "dataSource": "Banco_Alimentos_BD",
     "public": true
   },
-  "Insignias": {
+  "Insignia": {
     "dataSource": "Banco_Alimentos_BD",
     "public": true
   },
@@ -69,7 +69,15 @@
     "dataSource": "Banco_Alimentos_BD",
     "public": true
   },
-  "InsigniaOtorgada": {
+  "InsigniaOtorgadaVoluntario": {
+    "dataSource": "Banco_Alimentos_BD",
+    "public": true
+  },
+  "InsigniaOtorgadaOrgDonante": {
+    "dataSource": "Banco_Alimentos_BD",
+    "public": true
+  },
+  "Contacto": {
     "dataSource": "Banco_Alimentos_BD",
     "public": true
   }

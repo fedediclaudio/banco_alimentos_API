@@ -23,7 +23,32 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "envios": {
+      "type": "hasOne",
+      "model": "Envio",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "tipoDeAlimentos": {
+      "type": "hasOne",
+      "model": "TipoDeAlimento",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "bultoProductoPaquetes": {
+      "type": "hasMany",
+      "model": "BultoProductoPaquete",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }

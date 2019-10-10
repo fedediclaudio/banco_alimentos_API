@@ -1,5 +1,5 @@
 {
-  "name": "OrganizacionBeneficiaria",
+  "name": "Contacto",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -10,29 +10,25 @@
       "type": "string",
       "required": true
     },
-    "direccion": {
+    "apellido": {
       "type": "string",
       "required": true
     },
-    "direccion_coordenadas": {
-      "type": "geopoint"
+    "dni": {
+      "type": "string",
+      "required": true
     },
-    "nro_personas": {
-      "type": "number",
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "telefono": {
+      "type": "string",
       "required": true
     }
   },
   "validations": [],
-  "relations": {
-    "envios": {
-      "type": "hasMany",
-      "model": "Envio",
-      "foreignKey": "",
-      "options": {
-        "nestRemoting": true
-      }
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }

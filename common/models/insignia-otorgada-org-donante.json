@@ -1,40 +1,32 @@
 {
-  "name": "BultoProductoPaquete",
+  "name": "InsigniaOtorgadaOrgDonante",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "cantidad": {
-      "type": "number",
+    "fecha_se_otorgo": {
+      "type": "date",
       "required": true
     },
-    "fecha_vencimiento_minima": {
+    "fecha_perdio": {
       "type": "date"
     }
   },
   "validations": [],
   "relations": {
-    "bultos": {
+    "organizacionDonantes": {
       "type": "hasOne",
-      "model": "Bulto",
+      "model": "OrganizacionDonante",
       "foreignKey": "",
       "options": {
         "nestRemoting": true
       }
     },
-    "productos": {
+    "insignia": {
       "type": "hasOne",
-      "model": "Producto",
-      "foreignKey": "",
-      "options": {
-        "nestRemoting": true
-      }
-    },
-    "paquetes": {
-      "type": "hasOne",
-      "model": "Paquete",
+      "model": "Insignia",
       "foreignKey": "",
       "options": {
         "nestRemoting": true
