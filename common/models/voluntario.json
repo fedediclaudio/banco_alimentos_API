@@ -75,6 +75,14 @@
       "options": {
         "nestRemoting": true
       }
+    },
+    "asignacionesEnvio": {
+      "type": "hasMany",
+      "model": "AsignacionEnvio",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
     }
   },
   "acls": [],

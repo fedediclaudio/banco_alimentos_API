@@ -37,10 +37,6 @@
     "dataSource": "Banco_Alimentos_BD",
     "public": true
   },
-  "Estado": {
-    "dataSource": "Banco_Alimentos_BD",
-    "public": true
-  },
   "Insignia": {
     "dataSource": "Banco_Alimentos_BD",
     "public": true
@@ -78,6 +74,10 @@
     "public": true
   },
   "Contacto": {
+    "dataSource": "Banco_Alimentos_BD",
+    "public": true
+  },
+  "AsignacionEnvio": {
     "dataSource": "Banco_Alimentos_BD",
     "public": true
   }

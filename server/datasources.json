@@ -2,11 +2,11 @@
   "Banco_Alimentos_BD": {
     "host": "",
     "port": 0,
-    "url": "",
+    "url": "mongodb+srv://user:user@bancoalimentos-teog6.mongodb.net/test?retryWrites=true&w=majority",
     "database": "Banco_Alimentos_BD",
-    "password": "",
+    "password": "user",
     "name": "Banco_Alimentos_BD",
-    "user": "",
+    "user": "user",
     "useNewUrlParser": true,
     "connector": "mongodb"
   }

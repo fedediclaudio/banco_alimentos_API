@@ -25,18 +25,14 @@
     "fecha_vencimiento": {
       "type": "date",
       "required": true
+    },
+    "estado": {
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],
   "relations": {
-    "estados": {
-      "type": "hasOne",
-      "model": "Estado",
-      "foreignKey": "",
-      "options": {
-        "nestRemoting": true
-      }
-    },
     "voluntarios": {
       "type": "hasOne",
       "model": "Voluntario",

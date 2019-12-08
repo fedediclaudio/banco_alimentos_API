@@ -32,6 +32,10 @@
     },
     "fecha_asignacion": {
       "type": "date"
+    },
+    "estado": {
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],
@@ -39,14 +43,6 @@
     "voluntarios": {
       "type": "hasOne",
       "model": "Voluntario",
-      "foreignKey": "",
-      "options": {
-        "nestRemoting": true
-      }
-    },
-    "estados": {
-      "type": "hasOne",
-      "model": "Estado",
       "foreignKey": "",
       "options": {
         "nestRemoting": true
@@ -63,6 +59,14 @@
     "organizacionBeneficiaria": {
       "type": "hasOne",
       "model": "OrganizacionBeneficiaria",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "asignacionesEnvio": {
+      "type": "hasMany",
+      "model": "AsignacionEnvio",
       "foreignKey": "",
       "options": {
         "nestRemoting": true
