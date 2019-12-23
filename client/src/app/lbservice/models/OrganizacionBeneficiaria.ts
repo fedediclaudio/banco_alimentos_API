@@ -10,6 +10,8 @@ export interface OrganizacionBeneficiariaInterface {
   "direccion": string;
   "direccion_coordenadas"?: GeoPoint;
   "nro_personas": number;
+  "email": string;
+  "password": string;
   "id"?: any;
   "envioId"?: any;
   envios?: Envio[];
@@ -20,6 +22,8 @@ export class OrganizacionBeneficiaria implements OrganizacionBeneficiariaInterfa
   "direccion": string;
   "direccion_coordenadas": GeoPoint;
   "nro_personas": number;
+  "email": string;
+  "password": string;
   "id": any;
   "envioId": any;
   envios: Envio[];
@@ -71,6 +75,14 @@ export class OrganizacionBeneficiaria implements OrganizacionBeneficiariaInterfa
         "nro_personas": {
           name: 'nro_personas',
           type: 'number'
+        },
+        "email": {
+          name: 'email',
+          type: 'string'
+        },
+        "password": {
+          name: 'password',
+          type: 'string'
         },
         "id": {
           name: 'id',

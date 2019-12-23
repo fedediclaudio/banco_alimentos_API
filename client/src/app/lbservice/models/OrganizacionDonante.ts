@@ -13,6 +13,8 @@ export interface OrganizacionDonanteInterface {
   "direccion": string;
   "direccion_coordenadas"?: GeoPoint;
   "puntaje": number;
+  "email": string;
+  "password": string;
   "id"?: any;
   "bultoId"?: any;
   "insigniaOtorgadaOrgDonanteId"?: any;
@@ -27,6 +29,8 @@ export class OrganizacionDonante implements OrganizacionDonanteInterface {
   "direccion": string;
   "direccion_coordenadas": GeoPoint;
   "puntaje": number;
+  "email": string;
+  "password": string;
   "id": any;
   "bultoId": any;
   "insigniaOtorgadaOrgDonanteId": any;
@@ -85,6 +89,14 @@ export class OrganizacionDonante implements OrganizacionDonanteInterface {
         "puntaje": {
           name: 'puntaje',
           type: 'number'
+        },
+        "email": {
+          name: 'email',
+          type: 'string'
+        },
+        "password": {
+          name: 'password',
+          type: 'string'
         },
         "id": {
           name: 'id',

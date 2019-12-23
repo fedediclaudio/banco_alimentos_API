@@ -5,6 +5,7 @@ import {
   Bulto,
   Envio,
   InsigniaOtorgadaVoluntario,
+  AsignacionEnvio,
   GeoPoint
 } from '../index';
 
@@ -17,16 +18,19 @@ export interface VoluntarioInterface {
   "email": string;
   "direccion": string;
   "direccion_coordenadas"?: GeoPoint;
+  "password": string;
   "id"?: any;
   "categoriaVoluntarioId"?: any;
   "bultoId"?: any;
   "envioId"?: any;
   "insigniaOtorgadaVoluntarioId"?: any;
+  "asignacionTrasladoBultoId"?: any;
   vehiculos?: Vehiculo;
   categoriaVoluntarios?: CategoriaVoluntario;
   bultos?: Bulto[];
   envios?: Envio[];
   insigniaOtorgadas?: InsigniaOtorgadaVoluntario[];
+  asignacionesEnvio?: AsignacionEnvio[];
 }
 
 export class Voluntario implements VoluntarioInterface {
@@ -37,16 +41,19 @@ export class Voluntario implements VoluntarioInterface {
   "email": string;
   "direccion": string;
   "direccion_coordenadas": GeoPoint;
+  "password": string;
   "id": any;
   "categoriaVoluntarioId": any;
   "bultoId": any;
   "envioId": any;
   "insigniaOtorgadaVoluntarioId": any;
+  "asignacionTrasladoBultoId": any;
   vehiculos: Vehiculo;
   categoriaVoluntarios: CategoriaVoluntario;
   bultos: Bulto[];
   envios: Envio[];
   insigniaOtorgadas: InsigniaOtorgadaVoluntario[];
+  asignacionesEnvio: AsignacionEnvio[];
   constructor(data?: VoluntarioInterface) {
     Object.assign(this, data);
   }
@@ -108,6 +115,10 @@ export class Voluntario implements VoluntarioInterface {
           name: 'direccion_coordenadas',
           type: 'GeoPoint'
         },
+        "password": {
+          name: 'password',
+          type: 'string'
+        },
         "id": {
           name: 'id',
           type: 'any'
@@ -126,6 +137,10 @@ export class Voluntario implements VoluntarioInterface {
         },
         "insigniaOtorgadaVoluntarioId": {
           name: 'insigniaOtorgadaVoluntarioId',
+          type: 'any'
+        },
+        "asignacionTrasladoBultoId": {
+          name: 'asignacionTrasladoBultoId',
           type: 'any'
         },
       },
@@ -166,6 +181,14 @@ export class Voluntario implements VoluntarioInterface {
           name: 'insigniaOtorgadas',
           type: 'InsigniaOtorgadaVoluntario[]',
           model: 'InsigniaOtorgadaVoluntario',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'voluntarioId'
+        },
+        asignacionesEnvio: {
+          name: 'asignacionesEnvio',
+          type: 'AsignacionEnvio[]',
+          model: 'AsignacionEnvio',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'voluntarioId'

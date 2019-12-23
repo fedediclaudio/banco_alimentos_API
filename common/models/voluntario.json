@@ -32,6 +32,10 @@
     },
     "direccion_coordenadas": {
       "type": "geopoint"
+    },
+    "password": {
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],

@@ -1,9 +1,9 @@
 /* tslint:disable */
 import {
   Voluntario,
-  Estado,
   Paquete,
-  OrganizacionBeneficiaria
+  OrganizacionBeneficiaria,
+  AsignacionEnvio
 } from '../index';
 
 declare var Object: any;
@@ -15,15 +15,15 @@ export interface EnvioInterface {
   "fecha_traslado"?: Date;
   "comentario_traslado"?: string;
   "fecha_asignacion"?: Date;
+  "estado": string;
   "id"?: any;
   "organizacionBeneficiariaId"?: any;
   "voluntarioId"?: any;
-  "estadoId"?: any;
   "paqueteId"?: any;
   voluntarios?: Voluntario;
-  estados?: Estado;
   paquetes?: Paquete[];
   organizacionBeneficiaria?: OrganizacionBeneficiaria;
+  asignacionesEnvio?: AsignacionEnvio[];
 }
 
 export class Envio implements EnvioInterface {
@@ -34,15 +34,15 @@ export class Envio implements EnvioInterface {
   "fecha_traslado": Date;
   "comentario_traslado": string;
   "fecha_asignacion": Date;
+  "estado": string;
   "id": any;
   "organizacionBeneficiariaId": any;
   "voluntarioId": any;
-  "estadoId": any;
   "paqueteId": any;
   voluntarios: Voluntario;
-  estados: Estado;
   paquetes: Paquete[];
   organizacionBeneficiaria: OrganizacionBeneficiaria;
+  asignacionesEnvio: AsignacionEnvio[];
   constructor(data?: EnvioInterface) {
     Object.assign(this, data);
   }
@@ -104,6 +104,10 @@ export class Envio implements EnvioInterface {
           name: 'fecha_asignacion',
           type: 'Date'
         },
+        "estado": {
+          name: 'estado',
+          type: 'string'
+        },
         "id": {
           name: 'id',
           type: 'any'
@@ -116,10 +120,6 @@ export class Envio implements EnvioInterface {
           name: 'voluntarioId',
           type: 'any'
         },
-        "estadoId": {
-          name: 'estadoId',
-          type: 'any'
-        },
         "paqueteId": {
           name: 'paqueteId',
           type: 'any'
@@ -130,14 +130,6 @@ export class Envio implements EnvioInterface {
           name: 'voluntarios',
           type: 'Voluntario',
           model: 'Voluntario',
-          relationType: 'hasOne',
-                  keyFrom: 'id',
-          keyTo: 'envioId'
-        },
-        estados: {
-          name: 'estados',
-          type: 'Estado',
-          model: 'Estado',
           relationType: 'hasOne',
                   keyFrom: 'id',
           keyTo: 'envioId'
@@ -155,6 +147,14 @@ export class Envio implements EnvioInterface {
           type: 'OrganizacionBeneficiaria',
           model: 'OrganizacionBeneficiaria',
           relationType: 'hasOne',
+                  keyFrom: 'id',
+          keyTo: 'envioId'
+        },
+        asignacionesEnvio: {
+          name: 'asignacionesEnvio',
+          type: 'AsignacionEnvio[]',
+          model: 'AsignacionEnvio',
+          relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'envioId'
         },

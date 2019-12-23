@@ -6,7 +6,6 @@ import { Vehiculo } from '../../models/Vehiculo';
 import { OrganizacionDonante } from '../../models/OrganizacionDonante';
 import { PersonaDeContacto } from '../../models/PersonaDeContacto';
 import { TipoDeAlimento } from '../../models/TipoDeAlimento';
-import { Estado } from '../../models/Estado';
 import { Insignia } from '../../models/Insignia';
 import { CategoriaVoluntario } from '../../models/CategoriaVoluntario';
 import { Producto } from '../../models/Producto';
@@ -17,6 +16,8 @@ import { Envio } from '../../models/Envio';
 import { InsigniaOtorgadaVoluntario } from '../../models/InsigniaOtorgadaVoluntario';
 import { InsigniaOtorgadaOrgDonante } from '../../models/InsigniaOtorgadaOrgDonante';
 import { Contacto } from '../../models/Contacto';
+import { AsignacionEnvio } from '../../models/AsignacionEnvio';
+import { AsignacionTrasladoBulto } from '../../models/AsignacionTrasladoBulto';
 
 export interface Models { [name: string]: any }
 
@@ -30,7 +31,6 @@ export class SDKModels {
     OrganizacionDonante: OrganizacionDonante,
     PersonaDeContacto: PersonaDeContacto,
     TipoDeAlimento: TipoDeAlimento,
-    Estado: Estado,
     Insignia: Insignia,
     CategoriaVoluntario: CategoriaVoluntario,
     Producto: Producto,
@@ -41,6 +41,8 @@ export class SDKModels {
     InsigniaOtorgadaVoluntario: InsigniaOtorgadaVoluntario,
     InsigniaOtorgadaOrgDonante: InsigniaOtorgadaOrgDonante,
     Contacto: Contacto,
+    AsignacionEnvio: AsignacionEnvio,
+    AsignacionTrasladoBulto: AsignacionTrasladoBulto,
     
   };
 

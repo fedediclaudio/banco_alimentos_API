@@ -54,7 +54,6 @@ import { VehiculoApi } from './services/custom/Vehiculo';
 import { OrganizacionDonanteApi } from './services/custom/OrganizacionDonante';
 import { PersonaDeContactoApi } from './services/custom/PersonaDeContacto';
 import { TipoDeAlimentoApi } from './services/custom/TipoDeAlimento';
-import { EstadoApi } from './services/custom/Estado';
 import { InsigniaApi } from './services/custom/Insignia';
 import { CategoriaVoluntarioApi } from './services/custom/CategoriaVoluntario';
 import { ProductoApi } from './services/custom/Producto';
@@ -65,6 +64,8 @@ import { EnvioApi } from './services/custom/Envio';
 import { InsigniaOtorgadaVoluntarioApi } from './services/custom/InsigniaOtorgadaVoluntario';
 import { InsigniaOtorgadaOrgDonanteApi } from './services/custom/InsigniaOtorgadaOrgDonante';
 import { ContactoApi } from './services/custom/Contacto';
+import { AsignacionEnvioApi } from './services/custom/AsignacionEnvio';
+import { AsignacionTrasladoBultoApi } from './services/custom/AsignacionTrasladoBulto';
 /**
 * @module SDKBrowserModule
 * @description
@@ -101,7 +102,6 @@ export class SDKBrowserModule {
         OrganizacionDonanteApi,
         PersonaDeContactoApi,
         TipoDeAlimentoApi,
-        EstadoApi,
         InsigniaApi,
         CategoriaVoluntarioApi,
         ProductoApi,
@@ -112,6 +112,8 @@ export class SDKBrowserModule {
         InsigniaOtorgadaVoluntarioApi,
         InsigniaOtorgadaOrgDonanteApi,
         ContactoApi,
+        AsignacionEnvioApi,
+        AsignacionTrasladoBultoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
         { provide: SocketDriver, useClass: SocketBrowser }

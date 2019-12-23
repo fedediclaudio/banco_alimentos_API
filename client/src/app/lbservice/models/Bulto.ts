@@ -1,6 +1,5 @@
 /* tslint:disable */
 import {
-  Estado,
   Voluntario,
   OrganizacionDonante,
   BultoProductoPaquete
@@ -13,12 +12,12 @@ export interface BultoInterface {
   "fecha_disponibilidad": Date;
   "revisado": boolean;
   "fecha_vencimiento": Date;
+  "estado": string;
   "id"?: any;
   "voluntarioId"?: any;
   "organizacionDonanteId"?: any;
-  "estadoId"?: any;
   "bultoProductoPaqueteId"?: any;
-  estados?: Estado;
+  "asignacionTrasladoBultoId"?: any;
   voluntarios?: Voluntario;
   organizacionDonantes?: OrganizacionDonante;
   bultoProductoPaquetes?: BultoProductoPaquete[];
@@ -30,12 +29,12 @@ export class Bulto implements BultoInterface {
   "fecha_disponibilidad": Date;
   "revisado": boolean;
   "fecha_vencimiento": Date;
+  "estado": string;
   "id": any;
   "voluntarioId": any;
   "organizacionDonanteId": any;
-  "estadoId": any;
   "bultoProductoPaqueteId": any;
-  estados: Estado;
+  "asignacionTrasladoBultoId": any;
   voluntarios: Voluntario;
   organizacionDonantes: OrganizacionDonante;
   bultoProductoPaquetes: BultoProductoPaquete[];
@@ -92,6 +91,10 @@ export class Bulto implements BultoInterface {
           name: 'fecha_vencimiento',
           type: 'Date'
         },
+        "estado": {
+          name: 'estado',
+          type: 'string'
+        },
         "id": {
           name: 'id',
           type: 'any'
@@ -104,24 +107,16 @@ export class Bulto implements BultoInterface {
           name: 'organizacionDonanteId',
           type: 'any'
         },
-        "estadoId": {
-          name: 'estadoId',
-          type: 'any'
-        },
         "bultoProductoPaqueteId": {
           name: 'bultoProductoPaqueteId',
           type: 'any'
         },
+        "asignacionTrasladoBultoId": {
+          name: 'asignacionTrasladoBultoId',
+          type: 'any'
+        },
       },
       relations: {
-        estados: {
-          name: 'estados',
-          type: 'Estado',
-          model: 'Estado',
-          relationType: 'hasOne',
-                  keyFrom: 'id',
-          keyTo: 'bultoId'
-        },
         voluntarios: {
           name: 'voluntarios',
           type: 'Voluntario',

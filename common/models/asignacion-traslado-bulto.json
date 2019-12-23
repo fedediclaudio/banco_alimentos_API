@@ -1,0 +1,39 @@
+{
+  "name": "AsignacionTrasladoBulto",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "fecha_traslado": {
+      "type": "date",
+      "required": true
+    },
+    "estado": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "voluntario": {
+      "type": "hasOne",
+      "model": "Voluntario",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "bulto": {
+      "type": "hasOne",
+      "model": "Bulto",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
