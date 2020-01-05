@@ -14,6 +14,8 @@ export interface BultoInterface {
   "fecha_vencimiento": Date;
   "estado": string;
   "id"?: any;
+  "voluntariosId"?: any;
+  "organizacionDonantesId"?: any;
   "voluntarioId"?: any;
   "organizacionDonanteId"?: any;
   "bultoProductoPaqueteId"?: any;
@@ -31,6 +33,8 @@ export class Bulto implements BultoInterface {
   "fecha_vencimiento": Date;
   "estado": string;
   "id": any;
+  "voluntariosId": any;
+  "organizacionDonantesId": any;
   "voluntarioId": any;
   "organizacionDonanteId": any;
   "bultoProductoPaqueteId": any;
@@ -99,6 +103,14 @@ export class Bulto implements BultoInterface {
           name: 'id',
           type: 'any'
         },
+        "voluntariosId": {
+          name: 'voluntariosId',
+          type: 'any'
+        },
+        "organizacionDonantesId": {
+          name: 'organizacionDonantesId',
+          type: 'any'
+        },
         "voluntarioId": {
           name: 'voluntarioId',
           type: 'any'
@@ -121,17 +133,17 @@ export class Bulto implements BultoInterface {
           name: 'voluntarios',
           type: 'Voluntario',
           model: 'Voluntario',
-          relationType: 'hasOne',
-                  keyFrom: 'id',
-          keyTo: 'bultoId'
+          relationType: 'belongsTo',
+                  keyFrom: 'voluntariosId',
+          keyTo: 'id'
         },
         organizacionDonantes: {
           name: 'organizacionDonantes',
           type: 'OrganizacionDonante',
           model: 'OrganizacionDonante',
-          relationType: 'hasOne',
-                  keyFrom: 'id',
-          keyTo: 'bultoId'
+          relationType: 'belongsTo',
+                  keyFrom: 'organizacionDonantesId',
+          keyTo: 'id'
         },
         bultoProductoPaquetes: {
           name: 'bultoProductoPaquetes',

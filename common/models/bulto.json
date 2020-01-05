@@ -34,7 +34,7 @@
   "validations": [],
   "relations": {
     "voluntarios": {
-      "type": "hasOne",
+      "type": "belongsTo",
       "model": "Voluntario",
       "foreignKey": "",
       "options": {
@@ -42,7 +42,7 @@
       }
     },
     "organizacionDonantes": {
-      "type": "hasOne",
+      "type": "belongsTo",
       "model": "OrganizacionDonante",
       "foreignKey": "",
       "options": {

@@ -21,7 +21,6 @@ export interface VoluntarioInterface {
   "password": string;
   "id"?: any;
   "categoriaVoluntarioId"?: any;
-  "bultoId"?: any;
   "envioId"?: any;
   "insigniaOtorgadaVoluntarioId"?: any;
   "asignacionTrasladoBultoId"?: any;
@@ -44,7 +43,6 @@ export class Voluntario implements VoluntarioInterface {
   "password": string;
   "id": any;
   "categoriaVoluntarioId": any;
-  "bultoId": any;
   "envioId": any;
   "insigniaOtorgadaVoluntarioId": any;
   "asignacionTrasladoBultoId": any;
@@ -125,10 +123,6 @@ export class Voluntario implements VoluntarioInterface {
         },
         "categoriaVoluntarioId": {
           name: 'categoriaVoluntarioId',
-          type: 'any'
-        },
-        "bultoId": {
-          name: 'bultoId',
           type: 'any'
         },
         "envioId": {
