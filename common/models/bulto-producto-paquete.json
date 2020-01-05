@@ -17,7 +17,7 @@
   "validations": [],
   "relations": {
     "bultos": {
-      "type": "hasOne",
+      "type": "belongsTo",
       "model": "Bulto",
       "foreignKey": "",
       "options": {
@@ -25,7 +25,7 @@
       }
     },
     "productos": {
-      "type": "hasOne",
+      "type": "belongsTo",
       "model": "Producto",
       "foreignKey": "",
       "options": {
@@ -33,7 +33,7 @@
       }
     },
     "paquetes": {
-      "type": "hasOne",
+      "type": "belongsTo",
       "model": "Paquete",
       "foreignKey": "",
       "options": {

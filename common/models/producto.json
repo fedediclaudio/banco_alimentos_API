@@ -24,7 +24,7 @@
     "bultoProductoPaquetes": {
       "type": "hasMany",
       "model": "BultoProductoPaquete",
-      "foreignKey": "",
+      "foreignKey": "productoId",
       "options": {
         "nestRemoting": true
       }

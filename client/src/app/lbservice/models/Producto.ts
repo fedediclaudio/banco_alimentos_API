@@ -9,7 +9,6 @@ export interface ProductoInterface {
   "peso": string;
   "codigo_barra": string;
   "id"?: any;
-  "bultoProductoPaqueteId"?: any;
   bultoProductoPaquetes?: BultoProductoPaquete[];
 }
 
@@ -18,7 +17,6 @@ export class Producto implements ProductoInterface {
   "peso": string;
   "codigo_barra": string;
   "id": any;
-  "bultoProductoPaqueteId": any;
   bultoProductoPaquetes: BultoProductoPaquete[];
   constructor(data?: ProductoInterface) {
     Object.assign(this, data);
@@ -67,10 +65,6 @@ export class Producto implements ProductoInterface {
         },
         "id": {
           name: 'id',
-          type: 'any'
-        },
-        "bultoProductoPaqueteId": {
-          name: 'bultoProductoPaqueteId',
           type: 'any'
         },
       },
