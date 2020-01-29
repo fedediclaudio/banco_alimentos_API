@@ -16,6 +16,7 @@ export interface EnvioInterface {
   "comentario_traslado"?: string;
   "fecha_asignacion"?: Date;
   "estado": string;
+  "estado_traslado": string;
   "id"?: any;
   "organizacionBeneficiariaId"?: any;
   "voluntarioId"?: any;
@@ -35,6 +36,7 @@ export class Envio implements EnvioInterface {
   "comentario_traslado": string;
   "fecha_asignacion": Date;
   "estado": string;
+  "estado_traslado": string;
   "id": any;
   "organizacionBeneficiariaId": any;
   "voluntarioId": any;
@@ -106,6 +108,10 @@ export class Envio implements EnvioInterface {
         },
         "estado": {
           name: 'estado',
+          type: 'string'
+        },
+        "estado_traslado": {
+          name: 'estado_traslado',
           type: 'string'
         },
         "id": {

@@ -13,6 +13,7 @@ export interface BultoInterface {
   "revisado": boolean;
   "fecha_vencimiento": Date;
   "estado": string;
+  "estado_traslado": string;
   "id"?: any;
   "voluntariosId"?: any;
   "organizacionDonantesId"?: any;
@@ -31,6 +32,7 @@ export class Bulto implements BultoInterface {
   "revisado": boolean;
   "fecha_vencimiento": Date;
   "estado": string;
+  "estado_traslado": string;
   "id": any;
   "voluntariosId": any;
   "organizacionDonantesId": any;
@@ -95,6 +97,10 @@ export class Bulto implements BultoInterface {
         },
         "estado": {
           name: 'estado',
+          type: 'string'
+        },
+        "estado_traslado": {
+          name: 'estado_traslado',
           type: 'string'
         },
         "id": {
