@@ -20,7 +20,7 @@
     },
     "volumen": {
       "type": [
-        "number"
+        "string"
       ],
       "required": true
     },

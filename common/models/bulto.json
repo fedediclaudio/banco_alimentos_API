@@ -11,7 +11,7 @@
     },
     "volumen": {
       "type": [
-        "number"
+        "string"
       ]
     },
     "fecha_disponibilidad": {
