@@ -19,9 +19,7 @@
       "required": true
     },
     "volumen": {
-      "type": [
-        "string"
-      ],
+      "type": "string",
       "required": true
     },
     "distancia_maxima": {

@@ -5,7 +5,7 @@ export interface VehiculoInterface {
   "marca": string;
   "modelo": string;
   "patente": string;
-  "volumen": Array<any>;
+  "volumen": string;
   "distancia_maxima": number;
   "id"?: any;
   "voluntarioId"?: any;
@@ -15,7 +15,7 @@ export class Vehiculo implements VehiculoInterface {
   "marca": string;
   "modelo": string;
   "patente": string;
-  "volumen": Array<any>;
+  "volumen": string;
   "distancia_maxima": number;
   "id": any;
   "voluntarioId": any;
@@ -66,7 +66,7 @@ export class Vehiculo implements VehiculoInterface {
         },
         "volumen": {
           name: 'volumen',
-          type: 'Array&lt;any&gt;'
+          type: 'string'
         },
         "distancia_maxima": {
           name: 'distancia_maxima',
