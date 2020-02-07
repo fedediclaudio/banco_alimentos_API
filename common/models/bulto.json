@@ -60,6 +60,14 @@
       "options": {
         "nestRemoting": true
       }
+    },
+    "asignacionTrasladoBultos": {
+      "type": "hasMany",
+      "model": "AsignacionTrasladoBulto",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
     }
   },
   "acls": [],

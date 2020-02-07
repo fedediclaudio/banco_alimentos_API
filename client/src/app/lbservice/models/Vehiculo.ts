@@ -1,4 +1,7 @@
 /* tslint:disable */
+import {
+  Voluntario
+} from '../index';
 
 declare var Object: any;
 export interface VehiculoInterface {
@@ -9,6 +12,7 @@ export interface VehiculoInterface {
   "distancia_maxima": number;
   "id"?: any;
   "voluntarioId"?: any;
+  voluntario?: Voluntario;
 }
 
 export class Vehiculo implements VehiculoInterface {
@@ -19,6 +23,7 @@ export class Vehiculo implements VehiculoInterface {
   "distancia_maxima": number;
   "id": any;
   "voluntarioId": any;
+  voluntario: Voluntario;
   constructor(data?: VehiculoInterface) {
     Object.assign(this, data);
   }
@@ -82,6 +87,14 @@ export class Vehiculo implements VehiculoInterface {
         },
       },
       relations: {
+        voluntario: {
+          name: 'voluntario',
+          type: 'Voluntario',
+          model: 'Voluntario',
+          relationType: 'belongsTo',
+                  keyFrom: 'voluntarioId',
+          keyTo: 'id'
+        },
       }
     }
   }

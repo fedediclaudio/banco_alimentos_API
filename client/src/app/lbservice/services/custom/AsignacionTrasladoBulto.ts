@@ -11,8 +11,8 @@ import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AsignacionTrasladoBulto } from '../../models/AsignacionTrasladoBulto';
 import { SocketConnection } from '../../sockets/socket.connections';
-import { Voluntario } from '../../models/Voluntario';
 import { Bulto } from '../../models/Bulto';
+import { Voluntario } from '../../models/Voluntario';
 
 
 /**
@@ -32,127 +32,7 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Capta la relación hasOne voluntario.
-   *
-   * @param {any} id AsignacionTrasladoBulto id
-   *
-   * @param {boolean} refresh 
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `AsignacionTrasladoBulto` object.)
-   * </em>
-   */
-  public getVoluntario(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AsignacionTrasladoBultos/:id/voluntario";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Crea una nueva instancia en voluntario de este modelo.
-   *
-   * @param {any} id AsignacionTrasladoBulto id
-   *
-   * @param {object} data Request data.
-   *
-   * This method expects a subset of model properties as request parameters.
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `AsignacionTrasladoBulto` object.)
-   * </em>
-   */
-  public createVoluntario(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "POST";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AsignacionTrasladoBultos/:id/voluntario";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Actualizar voluntario de este modelo.
-   *
-   * @param {any} id AsignacionTrasladoBulto id
-   *
-   * @param {object} data Request data.
-   *
-   * This method expects a subset of model properties as request parameters.
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `AsignacionTrasladoBulto` object.)
-   * </em>
-   */
-  public updateVoluntario(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "PUT";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AsignacionTrasladoBultos/:id/voluntario";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Suprime voluntario de este modelo.
-   *
-   * @param {any} id AsignacionTrasladoBulto id
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * This method returns no data.
-   */
-  public destroyVoluntario(id: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AsignacionTrasladoBultos/:id/voluntario";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Capta la relación hasOne bulto.
+   * Capta la relación belongsTo bulto.
    *
    * @param {any} id AsignacionTrasladoBulto id
    *
@@ -182,13 +62,11 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Crea una nueva instancia en bulto de este modelo.
+   * Capta la relación belongsTo voluntario.
    *
    * @param {any} id AsignacionTrasladoBulto id
    *
-   * @param {object} data Request data.
-   *
-   * This method expects a subset of model properties as request parameters.
+   * @param {boolean} refresh 
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -199,74 +77,16 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
    * This usually means the response is a `AsignacionTrasladoBulto` object.)
    * </em>
    */
-  public createBulto(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "POST";
+  public getVoluntario(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AsignacionTrasladoBultos/:id/bulto";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Actualizar bulto de este modelo.
-   *
-   * @param {any} id AsignacionTrasladoBulto id
-   *
-   * @param {object} data Request data.
-   *
-   * This method expects a subset of model properties as request parameters.
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `AsignacionTrasladoBulto` object.)
-   * </em>
-   */
-  public updateBulto(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "PUT";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AsignacionTrasladoBultos/:id/bulto";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Suprime bulto de este modelo.
-   *
-   * @param {any} id AsignacionTrasladoBulto id
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * This method returns no data.
-   */
-  public destroyBulto(id: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AsignacionTrasladoBultos/:id/bulto";
+    "/AsignacionTrasladoBultos/:id/voluntario";
     let _routeParams: any = {
       id: id
     };
     let _postBody: any = {};
     let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
@@ -334,11 +154,11 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Capta la relación hasOne vehiculos.
+   * Buscar un elemento relacionado por id para vehiculos.
    *
    * @param {any} id AsignacionTrasladoBulto id
    *
-   * @param {boolean} refresh 
+   * @param {any} fk Clave foránea para vehiculos
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -349,90 +169,26 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
    * This usually means the response is a `AsignacionTrasladoBulto` object.)
    * </em>
    */
-  public getVoluntarioVehiculos(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+  public findByIdVoluntarioVehiculos(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AsignacionTrasladoBultos/:id/voluntario/vehiculos";
+    "/AsignacionTrasladoBultos/:id/voluntario/vehiculos/:fk";
     let _routeParams: any = {
-      id: id
+      id: id,
+      fk: fk
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
   /**
-   * Crea una nueva instancia en vehiculos de este modelo.
+   * Suprimir un elemento relacionado por id para vehiculos.
    *
    * @param {any} id AsignacionTrasladoBulto id
    *
-   * @param {object} data Request data.
-   *
-   * This method expects a subset of model properties as request parameters.
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `AsignacionTrasladoBulto` object.)
-   * </em>
-   */
-  public createVoluntarioVehiculos(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "POST";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AsignacionTrasladoBultos/:id/voluntario/vehiculos";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Actualizar vehiculos de este modelo.
-   *
-   * @param {any} id AsignacionTrasladoBulto id
-   *
-   * @param {object} data Request data.
-   *
-   * This method expects a subset of model properties as request parameters.
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `AsignacionTrasladoBulto` object.)
-   * </em>
-   */
-  public updateVoluntarioVehiculos(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "PUT";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AsignacionTrasladoBultos/:id/voluntario/vehiculos";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Suprime vehiculos de este modelo.
-   *
-   * @param {any} id AsignacionTrasladoBulto id
+   * @param {any} fk Clave foránea para vehiculos
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -440,14 +196,51 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public destroyVoluntarioVehiculos(id: any, customHeaders?: Function): Observable<any> {
+  public destroyByIdVoluntarioVehiculos(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AsignacionTrasladoBultos/:id/voluntario/vehiculos";
+    "/AsignacionTrasladoBultos/:id/voluntario/vehiculos/:fk";
     let _routeParams: any = {
-      id: id
+      id: id,
+      fk: fk
     };
     let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Actualizar un elemento relacionado por id para vehiculos.
+   *
+   * @param {any} id AsignacionTrasladoBulto id
+   *
+   * @param {any} fk Clave foránea para vehiculos
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `AsignacionTrasladoBulto` object.)
+   * </em>
+   */
+  public updateByIdVoluntarioVehiculos(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AsignacionTrasladoBultos/:id/voluntario/vehiculos/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {
+      data: data
+    };
     let _urlParams: any = {};
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
@@ -853,11 +646,11 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Buscar un elemento relacionado por id para asignacionesEnvio.
+   * Buscar un elemento relacionado por id para asignacionEnvios.
    *
    * @param {any} id AsignacionTrasladoBulto id
    *
-   * @param {any} fk Clave foránea para asignacionesEnvio
+   * @param {any} fk Clave foránea para asignacionEnvios
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -868,10 +661,10 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
    * This usually means the response is a `AsignacionTrasladoBulto` object.)
    * </em>
    */
-  public findByIdVoluntarioAsignacionesEnvio(id: any, fk: any, customHeaders?: Function): Observable<any> {
+  public findByIdVoluntarioAsignacionEnvios(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AsignacionTrasladoBultos/:id/voluntario/asignacionesEnvio/:fk";
+    "/AsignacionTrasladoBultos/:id/voluntario/asignacionEnvios/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -883,11 +676,11 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Suprimir un elemento relacionado por id para asignacionesEnvio.
+   * Suprimir un elemento relacionado por id para asignacionEnvios.
    *
    * @param {any} id AsignacionTrasladoBulto id
    *
-   * @param {any} fk Clave foránea para asignacionesEnvio
+   * @param {any} fk Clave foránea para asignacionEnvios
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -895,10 +688,10 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public destroyByIdVoluntarioAsignacionesEnvio(id: any, fk: any, customHeaders?: Function): Observable<any> {
+  public destroyByIdVoluntarioAsignacionEnvios(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AsignacionTrasladoBultos/:id/voluntario/asignacionesEnvio/:fk";
+    "/AsignacionTrasladoBultos/:id/voluntario/asignacionEnvios/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -910,11 +703,11 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Actualizar un elemento relacionado por id para asignacionesEnvio.
+   * Actualizar un elemento relacionado por id para asignacionEnvios.
    *
    * @param {any} id AsignacionTrasladoBulto id
    *
-   * @param {any} fk Clave foránea para asignacionesEnvio
+   * @param {any} fk Clave foránea para asignacionEnvios
    *
    * @param {object} data Request data.
    *
@@ -929,10 +722,10 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
    * This usually means the response is a `AsignacionTrasladoBulto` object.)
    * </em>
    */
-  public updateByIdVoluntarioAsignacionesEnvio(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+  public updateByIdVoluntarioAsignacionEnvios(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AsignacionTrasladoBultos/:id/voluntario/asignacionesEnvio/:fk";
+    "/AsignacionTrasladoBultos/:id/voluntario/asignacionEnvios/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -941,6 +734,215 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Buscar un elemento relacionado por id para asignacionTrasladoBultos.
+   *
+   * @param {any} id AsignacionTrasladoBulto id
+   *
+   * @param {any} fk Clave foránea para asignacionTrasladoBultos
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `AsignacionTrasladoBulto` object.)
+   * </em>
+   */
+  public findByIdVoluntarioAsignacionTrasladoBultos(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AsignacionTrasladoBultos/:id/voluntario/asignacionTrasladoBultos/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Suprimir un elemento relacionado por id para asignacionTrasladoBultos.
+   *
+   * @param {any} id AsignacionTrasladoBulto id
+   *
+   * @param {any} fk Clave foránea para asignacionTrasladoBultos
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public destroyByIdVoluntarioAsignacionTrasladoBultos(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AsignacionTrasladoBultos/:id/voluntario/asignacionTrasladoBultos/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Actualizar un elemento relacionado por id para asignacionTrasladoBultos.
+   *
+   * @param {any} id AsignacionTrasladoBulto id
+   *
+   * @param {any} fk Clave foránea para asignacionTrasladoBultos
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `AsignacionTrasladoBulto` object.)
+   * </em>
+   */
+  public updateByIdVoluntarioAsignacionTrasladoBultos(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AsignacionTrasladoBultos/:id/voluntario/asignacionTrasladoBultos/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * vehiculos consultas de Voluntario.
+   *
+   * @param {any} id AsignacionTrasladoBulto id
+   *
+   * @param {object} filter 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `AsignacionTrasladoBulto` object.)
+   * </em>
+   */
+  public getVoluntarioVehiculos(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AsignacionTrasladoBultos/:id/voluntario/vehiculos";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Crea una nueva instancia en vehiculos de este modelo.
+   *
+   * @param {any} id AsignacionTrasladoBulto id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `AsignacionTrasladoBulto` object.)
+   * </em>
+   */
+  public createVoluntarioVehiculos(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AsignacionTrasladoBultos/:id/voluntario/vehiculos";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Suprime todos los vehiculos de este modelo.
+   *
+   * @param {any} id AsignacionTrasladoBulto id
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public deleteVoluntarioVehiculos(id: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AsignacionTrasladoBultos/:id/voluntario/vehiculos";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Recuentos vehiculos de Voluntario.
+   *
+   * @param {any} id AsignacionTrasladoBulto id
+   *
+   * @param {object} where Criteria to match model instances
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `count` – `{number}` - 
+   */
+  public countVoluntarioVehiculos(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AsignacionTrasladoBultos/:id/voluntario/vehiculos/count";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
@@ -1294,7 +1296,7 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
   }
 
   /**
-   * asignacionesEnvio consultas de Voluntario.
+   * asignacionEnvios consultas de Voluntario.
    *
    * @param {any} id AsignacionTrasladoBulto id
    *
@@ -1309,10 +1311,10 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
    * This usually means the response is a `AsignacionTrasladoBulto` object.)
    * </em>
    */
-  public getVoluntarioAsignacionesEnvio(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+  public getVoluntarioAsignacionEnvios(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AsignacionTrasladoBultos/:id/voluntario/asignacionesEnvio";
+    "/AsignacionTrasladoBultos/:id/voluntario/asignacionEnvios";
     let _routeParams: any = {
       id: id
     };
@@ -1324,7 +1326,7 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Crea una nueva instancia en asignacionesEnvio de este modelo.
+   * Crea una nueva instancia en asignacionEnvios de este modelo.
    *
    * @param {any} id AsignacionTrasladoBulto id
    *
@@ -1341,10 +1343,10 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
    * This usually means the response is a `AsignacionTrasladoBulto` object.)
    * </em>
    */
-  public createVoluntarioAsignacionesEnvio(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+  public createVoluntarioAsignacionEnvios(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AsignacionTrasladoBultos/:id/voluntario/asignacionesEnvio";
+    "/AsignacionTrasladoBultos/:id/voluntario/asignacionEnvios";
     let _routeParams: any = {
       id: id
     };
@@ -1357,7 +1359,7 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Suprime todos los asignacionesEnvio de este modelo.
+   * Suprime todos los asignacionEnvios de este modelo.
    *
    * @param {any} id AsignacionTrasladoBulto id
    *
@@ -1367,10 +1369,10 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public deleteVoluntarioAsignacionesEnvio(id: any, customHeaders?: Function): Observable<any> {
+  public deleteVoluntarioAsignacionEnvios(id: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AsignacionTrasladoBultos/:id/voluntario/asignacionesEnvio";
+    "/AsignacionTrasladoBultos/:id/voluntario/asignacionEnvios";
     let _routeParams: any = {
       id: id
     };
@@ -1381,7 +1383,7 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Recuentos asignacionesEnvio de Voluntario.
+   * Recuentos asignacionEnvios de Voluntario.
    *
    * @param {any} id AsignacionTrasladoBulto id
    *
@@ -1395,10 +1397,126 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
    *
    *  - `count` – `{number}` - 
    */
-  public countVoluntarioAsignacionesEnvio(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+  public countVoluntarioAsignacionEnvios(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AsignacionTrasladoBultos/:id/voluntario/asignacionesEnvio/count";
+    "/AsignacionTrasladoBultos/:id/voluntario/asignacionEnvios/count";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * asignacionTrasladoBultos consultas de Voluntario.
+   *
+   * @param {any} id AsignacionTrasladoBulto id
+   *
+   * @param {object} filter 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `AsignacionTrasladoBulto` object.)
+   * </em>
+   */
+  public getVoluntarioAsignacionTrasladoBultos(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AsignacionTrasladoBultos/:id/voluntario/asignacionTrasladoBultos";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Crea una nueva instancia en asignacionTrasladoBultos de este modelo.
+   *
+   * @param {any} id AsignacionTrasladoBulto id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `AsignacionTrasladoBulto` object.)
+   * </em>
+   */
+  public createVoluntarioAsignacionTrasladoBultos(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AsignacionTrasladoBultos/:id/voluntario/asignacionTrasladoBultos";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Suprime todos los asignacionTrasladoBultos de este modelo.
+   *
+   * @param {any} id AsignacionTrasladoBulto id
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public deleteVoluntarioAsignacionTrasladoBultos(id: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AsignacionTrasladoBultos/:id/voluntario/asignacionTrasladoBultos";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Recuentos asignacionTrasladoBultos de Voluntario.
+   *
+   * @param {any} id AsignacionTrasladoBulto id
+   *
+   * @param {object} where Criteria to match model instances
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `count` – `{number}` - 
+   */
+  public countVoluntarioAsignacionTrasladoBultos(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AsignacionTrasladoBultos/:id/voluntario/asignacionTrasladoBultos/count";
     let _routeParams: any = {
       id: id
     };
@@ -1563,6 +1681,99 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
   }
 
   /**
+   * Buscar un elemento relacionado por id para asignacionTrasladoBultos.
+   *
+   * @param {any} id AsignacionTrasladoBulto id
+   *
+   * @param {any} fk Clave foránea para asignacionTrasladoBultos
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `AsignacionTrasladoBulto` object.)
+   * </em>
+   */
+  public findByIdBultoAsignacionTrasladoBultos(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AsignacionTrasladoBultos/:id/bulto/asignacionTrasladoBultos/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Suprimir un elemento relacionado por id para asignacionTrasladoBultos.
+   *
+   * @param {any} id AsignacionTrasladoBulto id
+   *
+   * @param {any} fk Clave foránea para asignacionTrasladoBultos
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public destroyByIdBultoAsignacionTrasladoBultos(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AsignacionTrasladoBultos/:id/bulto/asignacionTrasladoBultos/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Actualizar un elemento relacionado por id para asignacionTrasladoBultos.
+   *
+   * @param {any} id AsignacionTrasladoBulto id
+   *
+   * @param {any} fk Clave foránea para asignacionTrasladoBultos
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `AsignacionTrasladoBulto` object.)
+   * </em>
+   */
+  public updateByIdBultoAsignacionTrasladoBultos(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AsignacionTrasladoBultos/:id/bulto/asignacionTrasladoBultos/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * bultoProductoPaquetes consultas de Bulto.
    *
    * @param {any} id AsignacionTrasladoBulto id
@@ -1679,13 +1890,11 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Crea una nueva instancia en voluntario de este modelo.
+   * asignacionTrasladoBultos consultas de Bulto.
    *
    * @param {any} id AsignacionTrasladoBulto id
    *
-   * @param {object} data Request data.
-   *
-   * This method expects a subset of model properties as request parameters.
+   * @param {object} filter 
    *
    * @returns {object[]} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -1696,10 +1905,42 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
    * This usually means the response is a `AsignacionTrasladoBulto` object.)
    * </em>
    */
-  public createManyVoluntario(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+  public getBultoAsignacionTrasladoBultos(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AsignacionTrasladoBultos/:id/bulto/asignacionTrasladoBultos";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Crea una nueva instancia en asignacionTrasladoBultos de este modelo.
+   *
+   * @param {any} id AsignacionTrasladoBulto id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `AsignacionTrasladoBulto` object.)
+   * </em>
+   */
+  public createBultoAsignacionTrasladoBultos(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AsignacionTrasladoBultos/:id/voluntario";
+    "/AsignacionTrasladoBultos/:id/bulto/asignacionTrasladoBultos";
     let _routeParams: any = {
       id: id
     };
@@ -1712,7 +1953,60 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Crea una nueva instancia en bulto de este modelo.
+   * Suprime todos los asignacionTrasladoBultos de este modelo.
+   *
+   * @param {any} id AsignacionTrasladoBulto id
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public deleteBultoAsignacionTrasladoBultos(id: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AsignacionTrasladoBultos/:id/bulto/asignacionTrasladoBultos";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Recuentos asignacionTrasladoBultos de Bulto.
+   *
+   * @param {any} id AsignacionTrasladoBulto id
+   *
+   * @param {object} where Criteria to match model instances
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `count` – `{number}` - 
+   */
+  public countBultoAsignacionTrasladoBultos(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AsignacionTrasladoBultos/:id/bulto/asignacionTrasladoBultos/count";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Crea una nueva instancia en categoriaVoluntarios de este modelo.
    *
    * @param {any} id AsignacionTrasladoBulto id
    *
@@ -1729,10 +2023,10 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
    * This usually means the response is a `AsignacionTrasladoBulto` object.)
    * </em>
    */
-  public createManyBulto(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+  public createManyVoluntarioCategoriaVoluntarios(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AsignacionTrasladoBultos/:id/bulto";
+    "/AsignacionTrasladoBultos/:id/voluntario/categoriaVoluntarios";
     let _routeParams: any = {
       id: id
     };
@@ -1766,39 +2060,6 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/AsignacionTrasladoBultos/:id/voluntario/vehiculos";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Crea una nueva instancia en categoriaVoluntarios de este modelo.
-   *
-   * @param {any} id AsignacionTrasladoBulto id
-   *
-   * @param {object} data Request data.
-   *
-   * This method expects a subset of model properties as request parameters.
-   *
-   * @returns {object[]} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `AsignacionTrasladoBulto` object.)
-   * </em>
-   */
-  public createManyVoluntarioCategoriaVoluntarios(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
-    let _method: string = "POST";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AsignacionTrasladoBultos/:id/voluntario/categoriaVoluntarios";
     let _routeParams: any = {
       id: id
     };
@@ -1910,7 +2171,7 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Crea una nueva instancia en asignacionesEnvio de este modelo.
+   * Crea una nueva instancia en asignacionEnvios de este modelo.
    *
    * @param {any} id AsignacionTrasladoBulto id
    *
@@ -1927,10 +2188,43 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
    * This usually means the response is a `AsignacionTrasladoBulto` object.)
    * </em>
    */
-  public createManyVoluntarioAsignacionesEnvio(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+  public createManyVoluntarioAsignacionEnvios(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AsignacionTrasladoBultos/:id/voluntario/asignacionesEnvio";
+    "/AsignacionTrasladoBultos/:id/voluntario/asignacionEnvios";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Crea una nueva instancia en asignacionTrasladoBultos de este modelo.
+   *
+   * @param {any} id AsignacionTrasladoBulto id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `AsignacionTrasladoBulto` object.)
+   * </em>
+   */
+  public createManyVoluntarioAsignacionTrasladoBultos(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AsignacionTrasladoBultos/:id/voluntario/asignacionTrasladoBultos";
     let _routeParams: any = {
       id: id
     };
@@ -1964,6 +2258,39 @@ export class AsignacionTrasladoBultoApi extends BaseLoopBackApi {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/AsignacionTrasladoBultos/:id/bulto/bultoProductoPaquetes";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Crea una nueva instancia en asignacionTrasladoBultos de este modelo.
+   *
+   * @param {any} id AsignacionTrasladoBulto id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `AsignacionTrasladoBulto` object.)
+   * </em>
+   */
+  public createManyBultoAsignacionTrasladoBultos(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AsignacionTrasladoBultos/:id/bulto/asignacionTrasladoBultos";
     let _routeParams: any = {
       id: id
     };

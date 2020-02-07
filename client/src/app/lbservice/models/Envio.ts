@@ -24,7 +24,7 @@ export interface EnvioInterface {
   voluntarios?: Voluntario;
   paquetes?: Paquete[];
   organizacionBeneficiaria?: OrganizacionBeneficiaria;
-  asignacionesEnvio?: AsignacionEnvio[];
+  asignacionEnvios?: AsignacionEnvio[];
 }
 
 export class Envio implements EnvioInterface {
@@ -44,7 +44,7 @@ export class Envio implements EnvioInterface {
   voluntarios: Voluntario;
   paquetes: Paquete[];
   organizacionBeneficiaria: OrganizacionBeneficiaria;
-  asignacionesEnvio: AsignacionEnvio[];
+  asignacionEnvios: AsignacionEnvio[];
   constructor(data?: EnvioInterface) {
     Object.assign(this, data);
   }
@@ -156,8 +156,8 @@ export class Envio implements EnvioInterface {
                   keyFrom: 'id',
           keyTo: 'envioId'
         },
-        asignacionesEnvio: {
-          name: 'asignacionesEnvio',
+        asignacionEnvios: {
+          name: 'asignacionEnvios',
           type: 'AsignacionEnvio[]',
           model: 'AsignacionEnvio',
           relationType: 'hasMany',

@@ -28,7 +28,16 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "voluntario": {
+      "type": "belongsTo",
+      "model": "Voluntario",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }

@@ -2,7 +2,8 @@
 import {
   Voluntario,
   OrganizacionDonante,
-  BultoProductoPaquete
+  BultoProductoPaquete,
+  AsignacionTrasladoBulto
 } from '../index';
 
 declare var Object: any;
@@ -19,10 +20,10 @@ export interface BultoInterface {
   "organizacionDonantesId"?: any;
   "voluntarioId"?: any;
   "organizacionDonanteId"?: any;
-  "asignacionTrasladoBultoId"?: any;
   voluntarios?: Voluntario;
   organizacionDonantes?: OrganizacionDonante;
   bultoProductoPaquetes?: BultoProductoPaquete[];
+  asignacionTrasladoBultos?: AsignacionTrasladoBulto[];
 }
 
 export class Bulto implements BultoInterface {
@@ -38,10 +39,10 @@ export class Bulto implements BultoInterface {
   "organizacionDonantesId": any;
   "voluntarioId": any;
   "organizacionDonanteId": any;
-  "asignacionTrasladoBultoId": any;
   voluntarios: Voluntario;
   organizacionDonantes: OrganizacionDonante;
   bultoProductoPaquetes: BultoProductoPaquete[];
+  asignacionTrasladoBultos: AsignacionTrasladoBulto[];
   constructor(data?: BultoInterface) {
     Object.assign(this, data);
   }
@@ -123,10 +124,6 @@ export class Bulto implements BultoInterface {
           name: 'organizacionDonanteId',
           type: 'any'
         },
-        "asignacionTrasladoBultoId": {
-          name: 'asignacionTrasladoBultoId',
-          type: 'any'
-        },
       },
       relations: {
         voluntarios: {
@@ -149,6 +146,14 @@ export class Bulto implements BultoInterface {
           name: 'bultoProductoPaquetes',
           type: 'BultoProductoPaquete[]',
           model: 'BultoProductoPaquete',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'bultoId'
+        },
+        asignacionTrasladoBultos: {
+          name: 'asignacionTrasladoBultos',
+          type: 'AsignacionTrasladoBulto[]',
+          model: 'AsignacionTrasladoBulto',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'bultoId'

@@ -8,10 +8,31 @@
   "properties": {
     "fecha_envio": {
       "type": "date"
+    },
+    "estado": {
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "envio": {
+      "type": "belongsTo",
+      "model": "Envio",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "voluntario": {
+      "type": "belongsTo",
+      "model": "Voluntario",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }

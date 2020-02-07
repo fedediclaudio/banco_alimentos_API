@@ -68,7 +68,7 @@
         "nestRemoting": true
       }
     },
-    "asignacionesEnvio": {
+    "asignacionEnvios": {
       "type": "hasMany",
       "model": "AsignacionEnvio",
       "foreignKey": "",
