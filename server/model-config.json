@@ -84,5 +84,9 @@
   "AsignacionTrasladoBulto": {
     "dataSource": "Banco_Alimentos_BD",
     "public": true
+  },
+
+  "Email": {
+    "dataSource": "myEmailDataSource"
   }
 }
