@@ -1,24 +1,29 @@
 /* tslint:disable */
+import {
+  Voluntario
+} from '../index';
 
 declare var Object: any;
 export interface VehiculoInterface {
   "marca": string;
   "modelo": string;
   "patente": string;
-  "volumen": Array<any>;
+  "volumen": string;
   "distancia_maxima": number;
   "id"?: any;
   "voluntarioId"?: any;
+  voluntario?: Voluntario;
 }
 
 export class Vehiculo implements VehiculoInterface {
   "marca": string;
   "modelo": string;
   "patente": string;
-  "volumen": Array<any>;
+  "volumen": string;
   "distancia_maxima": number;
   "id": any;
   "voluntarioId": any;
+  voluntario: Voluntario;
   constructor(data?: VehiculoInterface) {
     Object.assign(this, data);
   }
@@ -66,7 +71,7 @@ export class Vehiculo implements VehiculoInterface {
         },
         "volumen": {
           name: 'volumen',
-          type: 'Array&lt;any&gt;'
+          type: 'string'
         },
         "distancia_maxima": {
           name: 'distancia_maxima',
@@ -82,6 +87,14 @@ export class Vehiculo implements VehiculoInterface {
         },
       },
       relations: {
+        voluntario: {
+          name: 'voluntario',
+          type: 'Voluntario',
+          model: 'Voluntario',
+          relationType: 'belongsTo',
+                  keyFrom: 'voluntarioId',
+          keyTo: 'id'
+        },
       }
     }
   }

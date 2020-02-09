@@ -47,7 +47,7 @@
     "bultos": {
       "type": "hasMany",
       "model": "Bulto",
-      "foreignKey": "",
+      "foreignKey": "organizacionDonanteId",
       "options": {
         "nestRemoting": true
       }

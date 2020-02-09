@@ -16,7 +16,6 @@ export interface OrganizacionDonanteInterface {
   "email": string;
   "password": string;
   "id"?: any;
-  "bultoId"?: any;
   "insigniaOtorgadaOrgDonanteId"?: any;
   bultos?: Bulto[];
   insigniaOtorgadaOrgDonantes?: InsigniaOtorgadaOrgDonante[];
@@ -32,7 +31,6 @@ export class OrganizacionDonante implements OrganizacionDonanteInterface {
   "email": string;
   "password": string;
   "id": any;
-  "bultoId": any;
   "insigniaOtorgadaOrgDonanteId": any;
   bultos: Bulto[];
   insigniaOtorgadaOrgDonantes: InsigniaOtorgadaOrgDonante[];
@@ -100,10 +98,6 @@ export class OrganizacionDonante implements OrganizacionDonanteInterface {
         },
         "id": {
           name: 'id',
-          type: 'any'
-        },
-        "bultoId": {
-          name: 'bultoId',
           type: 'any'
         },
         "insigniaOtorgadaOrgDonanteId": {

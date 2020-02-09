@@ -10,6 +10,9 @@ export interface BultoProductoPaqueteInterface {
   "cantidad": number;
   "fecha_vencimiento_minima"?: Date;
   "id"?: any;
+  "bultosId"?: any;
+  "productosId"?: any;
+  "paquetesId"?: any;
   "productoId"?: any;
   "paqueteId"?: any;
   "bultoId"?: any;
@@ -22,6 +25,9 @@ export class BultoProductoPaquete implements BultoProductoPaqueteInterface {
   "cantidad": number;
   "fecha_vencimiento_minima": Date;
   "id": any;
+  "bultosId": any;
+  "productosId": any;
+  "paquetesId": any;
   "productoId": any;
   "paqueteId": any;
   "bultoId": any;
@@ -73,6 +79,18 @@ export class BultoProductoPaquete implements BultoProductoPaqueteInterface {
           name: 'id',
           type: 'any'
         },
+        "bultosId": {
+          name: 'bultosId',
+          type: 'any'
+        },
+        "productosId": {
+          name: 'productosId',
+          type: 'any'
+        },
+        "paquetesId": {
+          name: 'paquetesId',
+          type: 'any'
+        },
         "productoId": {
           name: 'productoId',
           type: 'any'
@@ -91,25 +109,25 @@ export class BultoProductoPaquete implements BultoProductoPaqueteInterface {
           name: 'bultos',
           type: 'Bulto',
           model: 'Bulto',
-          relationType: 'hasOne',
-                  keyFrom: 'id',
-          keyTo: 'bultoProductoPaqueteId'
+          relationType: 'belongsTo',
+                  keyFrom: 'bultosId',
+          keyTo: 'id'
         },
         productos: {
           name: 'productos',
           type: 'Producto',
           model: 'Producto',
-          relationType: 'hasOne',
-                  keyFrom: 'id',
-          keyTo: 'bultoProductoPaqueteId'
+          relationType: 'belongsTo',
+                  keyFrom: 'productosId',
+          keyTo: 'id'
         },
         paquetes: {
           name: 'paquetes',
           type: 'Paquete',
           model: 'Paquete',
-          relationType: 'hasOne',
-                  keyFrom: 'id',
-          keyTo: 'bultoProductoPaqueteId'
+          relationType: 'belongsTo',
+                  keyFrom: 'paquetesId',
+          keyTo: 'id'
         },
       }
     }

@@ -1,18 +1,28 @@
 /* tslint:disable */
+import {
+  Envio,
+  Voluntario
+} from '../index';
 
 declare var Object: any;
 export interface AsignacionEnvioInterface {
   "fecha_envio"?: Date;
+  "estado": string;
   "id"?: any;
-  "voluntarioId"?: any;
   "envioId"?: any;
+  "voluntarioId"?: any;
+  envio?: Envio;
+  voluntario?: Voluntario;
 }
 
 export class AsignacionEnvio implements AsignacionEnvioInterface {
   "fecha_envio": Date;
+  "estado": string;
   "id": any;
-  "voluntarioId": any;
   "envioId": any;
+  "voluntarioId": any;
+  envio: Envio;
+  voluntario: Voluntario;
   constructor(data?: AsignacionEnvioInterface) {
     Object.assign(this, data);
   }
@@ -50,20 +60,40 @@ export class AsignacionEnvio implements AsignacionEnvioInterface {
           name: 'fecha_envio',
           type: 'Date'
         },
+        "estado": {
+          name: 'estado',
+          type: 'string'
+        },
         "id": {
           name: 'id',
-          type: 'any'
-        },
-        "voluntarioId": {
-          name: 'voluntarioId',
           type: 'any'
         },
         "envioId": {
           name: 'envioId',
           type: 'any'
         },
+        "voluntarioId": {
+          name: 'voluntarioId',
+          type: 'any'
+        },
       },
       relations: {
+        envio: {
+          name: 'envio',
+          type: 'Envio',
+          model: 'Envio',
+          relationType: 'belongsTo',
+                  keyFrom: 'envioId',
+          keyTo: 'id'
+        },
+        voluntario: {
+          name: 'voluntario',
+          type: 'Voluntario',
+          model: 'Voluntario',
+          relationType: 'belongsTo',
+                  keyFrom: 'voluntarioId',
+          keyTo: 'id'
+        },
       }
     }
   }

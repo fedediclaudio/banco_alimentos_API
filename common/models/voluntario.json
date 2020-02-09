@@ -49,7 +49,7 @@
       }
     },
     "vehiculos": {
-      "type": "hasOne",
+      "type": "hasMany",
       "model": "Vehiculo",
       "foreignKey": "",
       "options": {
@@ -80,7 +80,15 @@
         "nestRemoting": true
       }
     },
-    "asignacionesEnvio": {
+    "asignacionTrasladoBultos": {
+      "type": "hasMany",
+      "model": "AsignacionTrasladoBulto",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "asignacionEnvios": {
       "type": "hasMany",
       "model": "AsignacionEnvio",
       "foreignKey": "",

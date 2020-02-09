@@ -19,9 +19,7 @@
       "required": true
     },
     "volumen": {
-      "type": [
-        "number"
-      ],
+      "type": "string",
       "required": true
     },
     "distancia_maxima": {
@@ -30,7 +28,16 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "voluntario": {
+      "type": "belongsTo",
+      "model": "Voluntario",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }

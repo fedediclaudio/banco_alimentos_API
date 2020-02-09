@@ -1,24 +1,28 @@
 /* tslint:disable */
 import {
-  Voluntario,
-  Bulto
+  Bulto,
+  Voluntario
 } from '../index';
 
 declare var Object: any;
 export interface AsignacionTrasladoBultoInterface {
   "fecha_traslado": Date;
-  "estado": Date;
+  "estado": string;
   "id"?: any;
-  voluntario?: Voluntario;
+  "bultoId"?: any;
+  "voluntarioId"?: any;
   bulto?: Bulto;
+  voluntario?: Voluntario;
 }
 
 export class AsignacionTrasladoBulto implements AsignacionTrasladoBultoInterface {
   "fecha_traslado": Date;
-  "estado": Date;
+  "estado": string;
   "id": any;
-  voluntario: Voluntario;
+  "bultoId": any;
+  "voluntarioId": any;
   bulto: Bulto;
+  voluntario: Voluntario;
   constructor(data?: AsignacionTrasladoBultoInterface) {
     Object.assign(this, data);
   }
@@ -58,29 +62,37 @@ export class AsignacionTrasladoBulto implements AsignacionTrasladoBultoInterface
         },
         "estado": {
           name: 'estado',
-          type: 'Date'
+          type: 'string'
         },
         "id": {
           name: 'id',
           type: 'any'
         },
+        "bultoId": {
+          name: 'bultoId',
+          type: 'any'
+        },
+        "voluntarioId": {
+          name: 'voluntarioId',
+          type: 'any'
+        },
       },
       relations: {
-        voluntario: {
-          name: 'voluntario',
-          type: 'Voluntario',
-          model: 'Voluntario',
-          relationType: 'hasOne',
-                  keyFrom: 'id',
-          keyTo: 'asignacionTrasladoBultoId'
-        },
         bulto: {
           name: 'bulto',
           type: 'Bulto',
           model: 'Bulto',
-          relationType: 'hasOne',
-                  keyFrom: 'id',
-          keyTo: 'asignacionTrasladoBultoId'
+          relationType: 'belongsTo',
+                  keyFrom: 'bultoId',
+          keyTo: 'id'
+        },
+        voluntario: {
+          name: 'voluntario',
+          type: 'Voluntario',
+          model: 'Voluntario',
+          relationType: 'belongsTo',
+                  keyFrom: 'voluntarioId',
+          keyTo: 'id'
         },
       }
     }

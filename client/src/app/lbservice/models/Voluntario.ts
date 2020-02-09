@@ -6,6 +6,7 @@ import {
   Envio,
   InsigniaOtorgadaVoluntario,
   AsignacionEnvio,
+  AsignacionTrasladoBulto,
   GeoPoint
 } from '../index';
 
@@ -21,16 +22,15 @@ export interface VoluntarioInterface {
   "password": string;
   "id"?: any;
   "categoriaVoluntarioId"?: any;
-  "bultoId"?: any;
   "envioId"?: any;
   "insigniaOtorgadaVoluntarioId"?: any;
-  "asignacionTrasladoBultoId"?: any;
-  vehiculos?: Vehiculo;
+  vehiculos?: Vehiculo[];
   categoriaVoluntarios?: CategoriaVoluntario;
   bultos?: Bulto[];
   envios?: Envio[];
   insigniaOtorgadas?: InsigniaOtorgadaVoluntario[];
-  asignacionesEnvio?: AsignacionEnvio[];
+  asignacionEnvios?: AsignacionEnvio[];
+  asignacionTrasladoBultos?: AsignacionTrasladoBulto[];
 }
 
 export class Voluntario implements VoluntarioInterface {
@@ -44,16 +44,15 @@ export class Voluntario implements VoluntarioInterface {
   "password": string;
   "id": any;
   "categoriaVoluntarioId": any;
-  "bultoId": any;
   "envioId": any;
   "insigniaOtorgadaVoluntarioId": any;
-  "asignacionTrasladoBultoId": any;
-  vehiculos: Vehiculo;
+  vehiculos: Vehiculo[];
   categoriaVoluntarios: CategoriaVoluntario;
   bultos: Bulto[];
   envios: Envio[];
   insigniaOtorgadas: InsigniaOtorgadaVoluntario[];
-  asignacionesEnvio: AsignacionEnvio[];
+  asignacionEnvios: AsignacionEnvio[];
+  asignacionTrasladoBultos: AsignacionTrasladoBulto[];
   constructor(data?: VoluntarioInterface) {
     Object.assign(this, data);
   }
@@ -127,10 +126,6 @@ export class Voluntario implements VoluntarioInterface {
           name: 'categoriaVoluntarioId',
           type: 'any'
         },
-        "bultoId": {
-          name: 'bultoId',
-          type: 'any'
-        },
         "envioId": {
           name: 'envioId',
           type: 'any'
@@ -139,17 +134,13 @@ export class Voluntario implements VoluntarioInterface {
           name: 'insigniaOtorgadaVoluntarioId',
           type: 'any'
         },
-        "asignacionTrasladoBultoId": {
-          name: 'asignacionTrasladoBultoId',
-          type: 'any'
-        },
       },
       relations: {
         vehiculos: {
           name: 'vehiculos',
-          type: 'Vehiculo',
+          type: 'Vehiculo[]',
           model: 'Vehiculo',
-          relationType: 'hasOne',
+          relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'voluntarioId'
         },
@@ -185,10 +176,18 @@ export class Voluntario implements VoluntarioInterface {
                   keyFrom: 'id',
           keyTo: 'voluntarioId'
         },
-        asignacionesEnvio: {
-          name: 'asignacionesEnvio',
+        asignacionEnvios: {
+          name: 'asignacionEnvios',
           type: 'AsignacionEnvio[]',
           model: 'AsignacionEnvio',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'voluntarioId'
+        },
+        asignacionTrasladoBultos: {
+          name: 'asignacionTrasladoBultos',
+          type: 'AsignacionTrasladoBulto[]',
+          model: 'AsignacionTrasladoBulto',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'voluntarioId'

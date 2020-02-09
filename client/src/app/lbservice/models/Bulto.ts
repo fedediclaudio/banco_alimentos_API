@@ -2,7 +2,8 @@
 import {
   Voluntario,
   OrganizacionDonante,
-  BultoProductoPaquete
+  BultoProductoPaquete,
+  AsignacionTrasladoBulto
 } from '../index';
 
 declare var Object: any;
@@ -13,14 +14,16 @@ export interface BultoInterface {
   "revisado": boolean;
   "fecha_vencimiento": Date;
   "estado": string;
+  "estado_traslado": string;
   "id"?: any;
+  "voluntariosId"?: any;
+  "organizacionDonantesId"?: any;
   "voluntarioId"?: any;
   "organizacionDonanteId"?: any;
-  "bultoProductoPaqueteId"?: any;
-  "asignacionTrasladoBultoId"?: any;
   voluntarios?: Voluntario;
   organizacionDonantes?: OrganizacionDonante;
   bultoProductoPaquetes?: BultoProductoPaquete[];
+  asignacionTrasladoBultos?: AsignacionTrasladoBulto[];
 }
 
 export class Bulto implements BultoInterface {
@@ -30,14 +33,16 @@ export class Bulto implements BultoInterface {
   "revisado": boolean;
   "fecha_vencimiento": Date;
   "estado": string;
+  "estado_traslado": string;
   "id": any;
+  "voluntariosId": any;
+  "organizacionDonantesId": any;
   "voluntarioId": any;
   "organizacionDonanteId": any;
-  "bultoProductoPaqueteId": any;
-  "asignacionTrasladoBultoId": any;
   voluntarios: Voluntario;
   organizacionDonantes: OrganizacionDonante;
   bultoProductoPaquetes: BultoProductoPaquete[];
+  asignacionTrasladoBultos: AsignacionTrasladoBulto[];
   constructor(data?: BultoInterface) {
     Object.assign(this, data);
   }
@@ -95,8 +100,20 @@ export class Bulto implements BultoInterface {
           name: 'estado',
           type: 'string'
         },
+        "estado_traslado": {
+          name: 'estado_traslado',
+          type: 'string'
+        },
         "id": {
           name: 'id',
+          type: 'any'
+        },
+        "voluntariosId": {
+          name: 'voluntariosId',
+          type: 'any'
+        },
+        "organizacionDonantesId": {
+          name: 'organizacionDonantesId',
           type: 'any'
         },
         "voluntarioId": {
@@ -107,36 +124,36 @@ export class Bulto implements BultoInterface {
           name: 'organizacionDonanteId',
           type: 'any'
         },
-        "bultoProductoPaqueteId": {
-          name: 'bultoProductoPaqueteId',
-          type: 'any'
-        },
-        "asignacionTrasladoBultoId": {
-          name: 'asignacionTrasladoBultoId',
-          type: 'any'
-        },
       },
       relations: {
         voluntarios: {
           name: 'voluntarios',
           type: 'Voluntario',
           model: 'Voluntario',
-          relationType: 'hasOne',
-                  keyFrom: 'id',
-          keyTo: 'bultoId'
+          relationType: 'belongsTo',
+                  keyFrom: 'voluntariosId',
+          keyTo: 'id'
         },
         organizacionDonantes: {
           name: 'organizacionDonantes',
           type: 'OrganizacionDonante',
           model: 'OrganizacionDonante',
-          relationType: 'hasOne',
-                  keyFrom: 'id',
-          keyTo: 'bultoId'
+          relationType: 'belongsTo',
+                  keyFrom: 'organizacionDonantesId',
+          keyTo: 'id'
         },
         bultoProductoPaquetes: {
           name: 'bultoProductoPaquetes',
           type: 'BultoProductoPaquete[]',
           model: 'BultoProductoPaquete',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'bultoId'
+        },
+        asignacionTrasladoBultos: {
+          name: 'asignacionTrasladoBultos',
+          type: 'AsignacionTrasladoBulto[]',
+          model: 'AsignacionTrasladoBulto',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'bultoId'

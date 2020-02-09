@@ -13,7 +13,6 @@ export interface PaqueteInterface {
   "peso": number;
   "id"?: any;
   "tipoDeAlimentoId"?: any;
-  "bultoProductoPaqueteId"?: any;
   "envioId"?: any;
   tipoDeAlimentos?: TipoDeAlimento;
   bultoProductoPaquetes?: BultoProductoPaquete[];
@@ -27,7 +26,6 @@ export class Paquete implements PaqueteInterface {
   "peso": number;
   "id": any;
   "tipoDeAlimentoId": any;
-  "bultoProductoPaqueteId": any;
   "envioId": any;
   tipoDeAlimentos: TipoDeAlimento;
   bultoProductoPaquetes: BultoProductoPaquete[];
@@ -87,10 +85,6 @@ export class Paquete implements PaqueteInterface {
         },
         "tipoDeAlimentoId": {
           name: 'tipoDeAlimentoId',
-          type: 'any'
-        },
-        "bultoProductoPaqueteId": {
-          name: 'bultoProductoPaqueteId',
           type: 'any'
         },
         "envioId": {

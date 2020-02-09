@@ -11,7 +11,7 @@
     },
     "volumen": {
       "type": [
-        "number"
+        "string"
       ]
     },
     "fecha_disponibilidad": {
@@ -29,12 +29,16 @@
     "estado": {
       "type": "string",
       "required": true
+    },
+    "estado_traslado": {
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],
   "relations": {
     "voluntarios": {
-      "type": "hasOne",
+      "type": "belongsTo",
       "model": "Voluntario",
       "foreignKey": "",
       "options": {
@@ -42,7 +46,7 @@
       }
     },
     "organizacionDonantes": {
-      "type": "hasOne",
+      "type": "belongsTo",
       "model": "OrganizacionDonante",
       "foreignKey": "",
       "options": {
@@ -52,6 +56,14 @@
     "bultoProductoPaquetes": {
       "type": "hasMany",
       "model": "BultoProductoPaquete",
+      "foreignKey": "bultoId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "asignacionTrasladoBultos": {
+      "type": "hasMany",
+      "model": "AsignacionTrasladoBulto",
       "foreignKey": "",
       "options": {
         "nestRemoting": true

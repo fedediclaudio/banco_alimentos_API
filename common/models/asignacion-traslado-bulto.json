@@ -11,23 +11,23 @@
       "required": true
     },
     "estado": {
-      "type": "date",
+      "type": "string",
       "required": true
     }
   },
   "validations": [],
   "relations": {
-    "voluntario": {
-      "type": "hasOne",
-      "model": "Voluntario",
+    "bulto": {
+      "type": "belongsTo",
+      "model": "Bulto",
       "foreignKey": "",
       "options": {
         "nestRemoting": true
       }
     },
-    "bulto": {
-      "type": "hasOne",
-      "model": "Bulto",
+    "voluntario": {
+      "type": "belongsTo",
+      "model": "Voluntario",
       "foreignKey": "",
       "options": {
         "nestRemoting": true
