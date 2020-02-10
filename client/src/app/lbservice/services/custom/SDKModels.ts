@@ -18,6 +18,7 @@ import { InsigniaOtorgadaOrgDonante } from '../../models/InsigniaOtorgadaOrgDona
 import { Contacto } from '../../models/Contacto';
 import { AsignacionEnvio } from '../../models/AsignacionEnvio';
 import { AsignacionTrasladoBulto } from '../../models/AsignacionTrasladoBulto';
+import { Email } from '../../models/Email';
 
 export interface Models { [name: string]: any }
 
@@ -43,6 +44,7 @@ export class SDKModels {
     Contacto: Contacto,
     AsignacionEnvio: AsignacionEnvio,
     AsignacionTrasladoBulto: AsignacionTrasladoBulto,
+    Email: Email,
     
   };
 

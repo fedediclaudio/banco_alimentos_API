@@ -17,5 +17,6 @@ export * from './InsigniaOtorgadaOrgDonante';
 export * from './Contacto';
 export * from './AsignacionEnvio';
 export * from './AsignacionTrasladoBulto';
+export * from './Email';
 export * from './SDKModels';
 export * from './logger.service';

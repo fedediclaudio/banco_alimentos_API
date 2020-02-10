@@ -66,6 +66,7 @@ import { InsigniaOtorgadaOrgDonanteApi } from './services/custom/InsigniaOtorgad
 import { ContactoApi } from './services/custom/Contacto';
 import { AsignacionEnvioApi } from './services/custom/AsignacionEnvio';
 import { AsignacionTrasladoBultoApi } from './services/custom/AsignacionTrasladoBulto';
+import { EmailApi } from './services/custom/Email';
 /**
 * @module SDKBrowserModule
 * @description
@@ -114,6 +115,7 @@ export class SDKBrowserModule {
         ContactoApi,
         AsignacionEnvioApi,
         AsignacionTrasladoBultoApi,
+        EmailApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
         { provide: SocketDriver, useClass: SocketBrowser }
