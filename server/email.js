@@ -3,24 +3,29 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
 
-//const details = require("./details.json");
+//const app = express("../")
 
-const app = express("../boot");
+var loopback = require('loopback');
+var boot = require('loopback-boot');
 
-app.use(cors({ origin: "*" }));
-app.use(bodyParser.json());
+var app = module.exports = loopback();
 
-app.listen(3000, () => {
+
+//app.use(cors({ origin: "*" }));
+//app.use(bodyParser.json());
+
+/*app.listen(3000, () => {
   console.log("The server started on port 3000 !!!!!!");
-});
+});*/
 
-app.get("/", (req, res) => {
+/*
+app.get("http://localhost:3000", (req, res) => {
   res.send(
     "<h1 style='text-align: center'>Wellcome to FunOfHeuristic <br><br>😃👻😃👻😃👻😃👻😃</h1>"
   );
-});
+}); */
 
-app.post("/sendmail", (req, res) => {
+app.post('sendmail', (req, res) => {
   console.log("request came");
   let user = req.body;
   sendMail(user, info => {

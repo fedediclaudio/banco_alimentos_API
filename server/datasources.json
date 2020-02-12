@@ -17,7 +17,7 @@
     "transports": [{
       "type": "SMTP",
       "host": "smtp.gmail.com",
-      "secure": true,
+      "secure": false,
       "port": 587,
       "auth": {
         "user": "valen.julasoft@gmail.com",
