@@ -24,8 +24,8 @@ app.get("http://localhost:3000", (req, res) => {
     "<h1 style='text-align: center'>Wellcome to FunOfHeuristic <br><br>😃👻😃👻😃👻😃👻😃</h1>"
   );
 }); */
-
-app.post('sendmail', (req, res) => {
+/*
+app.post('/sendmail', (req, res) => {
   console.log("request came");
   let user = req.body;
   sendMail(user, info => {
@@ -48,7 +48,7 @@ async function sendMail(user, callback) {
   let info = await transporter.sendMail(mailOptions);
 
   callback(info);
-}
+} */
 
 /*// main().catch(console.error);
 module.exports = function(MyModel) {

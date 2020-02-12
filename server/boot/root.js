@@ -8,7 +8,7 @@
 module.exports = function(server) {
   // Install a `/` route that returns server status
   var router = server.loopback.Router();
-  router.post('/sendmail', server.loopback.status());
+  router.post('/sendmail');
   router.get('/', server.loopback.status());
 
   server.use(router);

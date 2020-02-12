@@ -5,10 +5,17 @@
 
 'use strict';
 
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const nodemailer = require("nodemailer");
 var loopback = require('loopback');
 var boot = require('loopback-boot');
 
 var app = module.exports = loopback();
+
+app.use(cors({origin:"*"}));
+app.use(bodyParser.json());
 
 app.start = function() {
   // start the web server
@@ -21,10 +28,43 @@ app.start = function() {
       console.log('Browse your REST API at %s%s', baseUrl, explorerPath);
     }
 
+    app.post('/sendmail', (req, res) => {
+      console.log("request came");
+      let user = req.body;
+      sendMail(user, info => {
+        console.log(`The mail has beed send 😃 and the id is ${info.messageId}`);
+        res.send(info);
+      });
+    });
+
   });
 };
 
+async function sendMail(user, callback) {
+ 
+  let transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false, // true for 465, false for other ports
+    auth: {
+      user: "valen.julasoft@gmail.com",
+      pass: "julasoft"
+    }
+  });
 
+  let mailOptions = {
+    from: '"Fun Of Heuristic"<valen.julasoft@gmail.com>', // sender address
+    to: user.email, // list of receivers
+    subject: "Wellcome to Fun Of Heuristic 👻", // Subject line
+    html: `<h1>Hi ${user.razonSocial}</h1><br>
+    <h4>Thanks for joining us</h4>`
+  };
+
+  // send mail with defined transport object
+  let info = await transporter.sendMail(mailOptions);
+
+  callback(info);
+}
 
 
 // Bootstrap the application, configure models, datasources and middleware.
