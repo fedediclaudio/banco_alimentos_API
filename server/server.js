@@ -47,17 +47,18 @@ async function sendMail(user, callback) {
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-      user: "valen.julasoft@gmail.com",
-      pass: "julasoft"
+      user: "bancodealimentos.laplata@gmail.com",
+      pass: "nodemailer"
     }
   });
 
   let mailOptions = {
-    from: '"Fun Of Heuristic"<valen.julasoft@gmail.com>', // sender address
+    from: '"BancoDeAlimentos"<bancodealimentos.laplata@gmail.com>', // sender address
     to: user.email, // list of receivers
-    subject: "Wellcome to Fun Of Heuristic 👻", // Subject line
-    html: `<h1>Hi ${user.razonSocial}</h1><br>
-    <h4>Thanks for joining us</h4>`
+    subject: "Solicitud de traslado", // Subject line
+    html: `<h1>Hola ${user.razonSocial}</h1><br>
+    <h4>Has sido asignado a un traslado</h4> <br>
+    <h6>Por favor revisa tu cuenta</h6>`
   };
 
   // send mail with defined transport object
