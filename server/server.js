@@ -56,8 +56,8 @@ async function sendMail(user, callback) {
     from: '"BancoDeAlimentos"<bancodealimentos.laplata@gmail.com>', // sender address
     to: user.email, // list of receivers
     subject: "Solicitud de traslado", // Subject line
-    html: `<h1>Hola ${user.razonSocial}</h1><br>
-    <h4>Has sido asignado a un traslado</h4> <br>
+    html: `<h1>Hola ${user.name}</h1><br>
+    <h4>Te hemos asignado a un traslado</h4> <br>
     <h6>Por favor revisa tu cuenta</h6>`
   };
 
